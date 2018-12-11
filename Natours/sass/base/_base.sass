@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: inherit // Viewed as better practice than setting box-sizing to border-box here directly. That way it is easier to change if necessary, e.g in plugins etc.
+
+html
+  font-size: 62.5% // sets 1 rem to 10px by default
+
+body
+  box-sizing: border-box
