@@ -1,0 +1,3 @@
+@function calc-column-width($number-of-columns, $columns-per-row)
+  @return calc(#{$number-of-columns} * ((100% - (#{$columns-per-row} - 1) * #{$gutter-horizontal}) / #{$columns-per-row}) + (#{$gutter-horizontal} * (#{$number-of-columns - 1})))
+    
