@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass sass/main.sass css/style.css",
+    "watch:sass": "nodemon -e sass -x \"npm run compile:sass\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.8"
   }
 }
