@@ -41,3 +41,26 @@
 
 .btn--animated
   animation: moveInBottom .5s ease-out .5s backwards // "backwards" makes the 0% styles apply before the animation starts
+
+.btn-text
+  &:link,
+  &:visited
+    font-size: $default-font-size
+    font-weight: 700
+    color: $color-primary
+    display: inline-block
+    text-decoration: none
+    border-bottom: 1px solid $color-primary
+    padding: 3px 5px
+    position: relative
+    transition: all .2s
+
+  &:active
+    box-shadow: 0 1rem 2rem rgba($color-blackest, .1)
+    transform: translateY(0)
+
+.u-hitbox:hover>.btn-text // fixes stuttering caused by transform
+  background-color: $color-primary
+  color: $color-whitest
+  box-shadow: 0 1rem 2rem rgba($color-blackest, .1)
+  transform: translateY(-2px)
