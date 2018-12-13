@@ -1,14 +1,17 @@
+$gradient-1: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+$gradient-1-transparent: linear-gradient(to right bottom, rgba($color-secondary-light, .9), rgba($color-secondary-dark, .9))
+
+$card-height: 51rem
 .card
+  // FUNCTIONALITY
   perspective: 150rem
   -moz-perspective: 150rem
   position: relative
-  height: 50rem // need this to keep the perspective effect because the height collapses when the card__side elements are set to position: absolute 
+  height: $card-height // need this to keep the perspective effect because the height collapses when the card__side elements are set to position: absolute 
 
   &__side
     background-color: #548332
-    color: white
-    font-size: 3rem
-    height: 50rem
+    height: $card-height
     transition: all .6s ease
     position: absolute
     top: 0
@@ -16,6 +19,7 @@
     width: 100%
     backface-visibility: hidden
     border-radius: 3px
+    overflow: hidden // because the image overflows the card hiding the borders
     box-shadow: 0 1.5rem 2rem rgba($color-blackest, .15)
 
     &--front
@@ -25,13 +29,70 @@
       transform: rotateY(180deg)
 
       &-1
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+        background-image: $gradient-1
 
       &-2
       &-3
 
   &:hover &__side--front
-    transform: rotateY(180deg)
+    transform: rotateY(-180deg)
 
   &:hover &__side--back
     transform: rotateY(0)
+
+  // FRONT-SIDE STYLING
+  &__picture
+    background-size: cover
+    height: 23rem
+    background-blend-mode: screen
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
+
+    &--1
+      background-image: $gradient-1, url(../img/nat-5.jpg)
+
+    &--2
+      background-image: url(../img/nat-6.jpg)
+
+    &--3
+      background-image: url(../img/nat-7.jpg)
+
+  &__heading
+    font-size: 2.8rem
+    font-weight: 300
+    text-transform: uppercase
+    text-align: right
+    color: $color-whitest
+    position: absolute
+    top: 12rem
+    right: 2rem
+    width: 75%
+
+  // Separate selector because not a really a child of heading, instead a separate element
+  &__heading-span
+    padding: 1rem 1.5rem
+    -webkit-box-decoration-break: clone
+    box-decoration-break: clone // When text breaks to the next line, both lines are treated as individual units, both getting padding, margin...
+      
+    &--1
+      background-image: $gradient-1-transparent
+
+    &--2
+
+    &--3
+
+  &__details
+    padding: 2rem 3rem
+
+    ul
+      list-style: none
+      width: 80%
+      margin: 0 auto
+
+      li
+        text-align: center
+        font-size: 1.5rem
+        padding: 1rem
+
+        &:not(:last-child)
+          border-bottom: 1px solid $color-light-grey-2
