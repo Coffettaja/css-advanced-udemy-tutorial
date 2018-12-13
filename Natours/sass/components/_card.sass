@@ -1,5 +1,9 @@
 $gradient-1: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+$gradient-2: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+$gradient-3: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark)
 $gradient-1-transparent: linear-gradient(to right bottom, rgba($color-secondary-light, .9), rgba($color-secondary-dark, .9))
+$gradient-2-transparent: linear-gradient(to right bottom, rgba($color-primary-light, .9), rgba($color-primary-dark, .9))
+$gradient-3-transparent: linear-gradient(to right bottom, rgba($color-tertiary-light, .9), rgba($color-tertiary-dark, .9))
 
 $card-height: 51rem
 .card
@@ -30,9 +34,10 @@ $card-height: 51rem
 
       &-1
         background-image: $gradient-1
-
       &-2
+        background-image: $gradient-2
       &-3
+        background-image: $gradient-3
 
   &:hover &__side--front
     transform: rotateY(-180deg)
@@ -52,10 +57,10 @@ $card-height: 51rem
       background-image: $gradient-1, url(../img/nat-5.jpg)
 
     &--2
-      background-image: url(../img/nat-6.jpg)
+      background-image: $gradient-2, url(../img/nat-6.jpg)
 
     &--3
-      background-image: url(../img/nat-7.jpg)
+      background-image: $gradient-3, url(../img/nat-7.jpg)
 
   &__heading
     font-size: 2.8rem
@@ -78,8 +83,10 @@ $card-height: 51rem
       background-image: $gradient-1-transparent
 
     &--2
+      background-image: $gradient-2-transparent
 
     &--3
+      background-image: $gradient-3-transparent
 
   &__details
     padding: 2rem 3rem
@@ -94,5 +101,24 @@ $card-height: 51rem
         font-size: 1.5rem
         padding: 1rem
 
-        &:not(:last-child)
-          border-bottom: 1px solid $color-light-grey-2
+  // BACK-SIDE STYLING
+  &__cta
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 90%
+    text-align: center
+
+  &__price-box
+    text-align: center
+    color: $color-whitest
+    margin-bottom: 8rem
+
+  &__price-only
+    font-size: 1.4rem
+    text-transform: uppercase
+
+  &__price-value
+    font-size: 6rem
+    font-weight: 300
