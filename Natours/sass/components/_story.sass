@@ -1,7 +1,7 @@
 .story
   width: 75%
   margin: 0 auto
-  box-shadow: 0 3rem 6rem rgba($color-blackest, .2)
+  box-shadow: 0 2rem 3rem rgba($color-blackest, .15)
   background-color: $color-whitest
   border-radius: 3px
   padding: 6rem
@@ -18,6 +18,7 @@
     height: 15rem
     background: orangered
     float: left
+    position: relative
 
     // For this to work, the element has to have defined dimensions (width, height) and it has to be floated. Makes the text wrap around a circle shape
     -webkit-shape-outside: circle(50% at 50% 50%)
@@ -28,7 +29,29 @@
     transform: translateX(-3rem) skewX(12deg) // best way to position a floated element
 
   &__img
-    height: 100% // image is wider than it is tall so setting height 
+    height: 100% // image is wider than it is tall so setting height
+    transform: scale(1.2)
+    transition: all .3s
+
+  &__caption
+    position: absolute
+    +center-absolute
+    transform: translate(-50%,20%)
+    color: $color-whitest
+    text-transform: uppercase
+    font-size: 1.7rem
+    text-align: center
+    transition: all .3s
+    opacity: 0
+    backface-visibility: hidden
+
+  &:hover &__caption
+    opacity: 1
+    transform: translate(-50%, -50%)
+
+  &:hover &__img
+    transform: scale(1.05)
+    filter: blur(3px) brightness(80%)
 
   &__text
     transform: skewX(12deg)
