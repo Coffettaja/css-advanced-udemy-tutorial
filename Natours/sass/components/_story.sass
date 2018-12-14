@@ -2,7 +2,7 @@
   width: 75%
   margin: 0 auto
   box-shadow: 0 2rem 3rem rgba($color-blackest, .15)
-  background-color: $color-whitest
+  background-color: rgba($color-whitest, .6)
   border-radius: 3px
   padding: 6rem
   padding-left: 9rem // left padding has the __shape transform added
@@ -30,7 +30,7 @@
 
   &__img
     height: 100% // image is wider than it is tall so setting height
-    transform: scale(1.2)
+    transform: translateX(-3rem) scale(1.2)
     transition: all .3s
 
   &__caption
@@ -50,8 +50,8 @@
     transform: translate(-50%, -50%)
 
   &:hover &__img
-    transform: scale(1.05)
-    filter: blur(3px) brightness(80%)
+    transform: translateX(-3rem) scale(1.05)
+    filter: blur(3px) brightness(70%)
 
   &__text
     transform: skewX(12deg)
