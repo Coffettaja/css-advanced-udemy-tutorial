@@ -1,0 +1,34 @@
+.story
+  width: 75%
+  margin: 0 auto
+  box-shadow: 0 3rem 6rem rgba($color-blackest, .2)
+  background-color: $color-whitest
+  border-radius: 3px
+  padding: 6rem
+  padding-left: 9rem // left padding has the __shape transform added
+  font-size: $default-font-size
+  transform: skewX(-12deg)
+
+  // & > * // Can't do this because there is already a transform for the shape
+  //   transform: skewX(12deg)
+
+
+  &__shape
+    width: 15rem
+    height: 15rem
+    background: orangered
+    float: left
+
+    // For this to work, the element has to have defined dimensions (width, height) and it has to be floated. Makes the text wrap around a circle shape
+    -webkit-shape-outside: circle(50% at 50% 50%)
+    shape-outside: circle(50% at 50% 50%)
+
+    -webkit-clip-path: circle(50% at 50% 50%)
+    clip-path: circle(50% at 50% 50%)
+    transform: translateX(-3rem) skewX(12deg) // best way to position a floated element
+
+  &__img
+    height: 100% // image is wider than it is tall so setting height 
+
+  &__text
+    transform: skewX(12deg)
