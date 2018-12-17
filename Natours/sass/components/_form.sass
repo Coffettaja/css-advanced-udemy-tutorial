@@ -1,7 +1,7 @@
 .form
   &__group
     &:not(:last-child)
-      margin-bottom: 2rem
+      margin-bottom: 1.3rem
 
   &__input
     font-family: inherit // input elements don't inherit this my default
@@ -15,6 +15,7 @@
     border-bottom: 3px solid transparent // so the elements don't move on focus
     width: 80%
     display: block
+    transition: all .3s
 
     &:focus
       outline: none
@@ -42,3 +43,43 @@
     opacity: 0
     visibility: hidden
     transform: translate(4rem, -4rem) scale(1.2)
+
+  &__radio-group
+    width: 45%
+    display: inline-block
+
+  &__radio-label
+    font-size: $default-font-size
+    cursor: pointer
+    position: relative
+    padding-left: 4rem
+
+  &__radio-input
+    position: absolute
+    opacity: 0
+
+  &__radio-button
+    height: 3rem
+    width: 3rem
+    border: 5px solid $color-primary
+    border-radius: 50%
+    display: inline-block
+    position: absolute
+    left: 0
+    top: -.5rem
+
+    &::after
+      content: ""
+      height: 1.4rem
+      width: 1.4rem
+      display: block
+      border-radius: 50%
+      position: absolute
+      +center-absolute
+      background-color: $color-primary
+      opacity: 0
+      transition: all .2s
+
+  &__radio-input:checked + &__radio-label > &__radio-button::after,
+  &__radio-input:focus + &__radio-label > &__radio-button::after
+    opacity: 1
