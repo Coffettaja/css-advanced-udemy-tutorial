@@ -11,6 +11,7 @@
     right: 6rem
     border-radius: 50%
     z-index: 2000
+    box-shadow: 0 1rem 3rem rgba($color-blackest, .1)
 
   &__background
     height: 6rem
@@ -21,17 +22,20 @@
     right: 6.5rem
     background-image: radial-gradient($color-primary-dark, $color-primary-light)
     z-index: 1000
-    transform: scale(100)
+    transition: transform .6s ease-in
 
   &__nav
     height: 100vh
-    width: 100vw
+    width: 0
+    opacity: 0
     position: fixed
     top: 0
     left: 0
     z-index: 1500
+    transition: all .6s cubic-bezier(.68, -.55, .26, 1.5)
 
   &__list
+    width: 100%
     position: absolute
     +center-absolute
     list-style: none
@@ -65,3 +69,10 @@
       background-position: 100%
       color: $color-primary
       transform: translateX(.5rem)
+
+  &__checkbox:checked ~ &__background
+    transform: scale(90)
+
+  &__checkbox:checked ~ &__nav
+    opacity: 1
+    width: 100vw
