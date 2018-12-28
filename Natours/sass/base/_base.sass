@@ -8,5 +8,14 @@
 html
   font-size: 62.5% // sets 1 rem to 10px by default
 
+  +respond-tab-land
+    font-size: 56.25% // 1rem = 9px
+  
+  +respond-tab-port
+    font-size: 50% // 1 rem = 8px, 8 / 16 = 50%
+  
+  +respond-big-desktop
+    font-size: 75% // 1rem = 12px
+
 body
   box-sizing: border-box

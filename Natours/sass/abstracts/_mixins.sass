@@ -8,3 +8,21 @@
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
+
+// Media queries
+=respond-phone
+  // ems are the safest option for media queries
+  @media (max-width: 37.5em) // 600px / 16 = 37.5 
+    @content // allows passing a block of code into a mixin
+
+=respond-tab-port
+  @media (max-width: 56.25em) // 900px
+    @content
+
+=respond-tab-land
+  @media (max-width: 75em) //1200px
+    @content
+
+=respond-big-desktop
+  @media (min-width: 112.5em) // 1800px
+    @content
