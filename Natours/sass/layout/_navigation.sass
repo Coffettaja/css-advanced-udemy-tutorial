@@ -15,6 +15,10 @@
     box-shadow: 0 1rem 3rem rgba($color-blackest, .1)
     cursor: pointer
 
+    +respond-tab-port
+      top: 3rem
+      right: 3rem
+
   &__background
     height: 6rem
     width: 6rem
@@ -25,6 +29,10 @@
     background-image: radial-gradient($color-primary-dark, $color-primary-light)
     z-index: 1000
     transition: transform .6s ease-in
+
+    +respond-tab-port
+      top: 3.5rem
+      right: 3.5rem
 
   &__nav
     height: 100vh
