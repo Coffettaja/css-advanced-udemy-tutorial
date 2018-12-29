@@ -48,8 +48,20 @@ $skew-degree: 5deg
   background-size: 100% // basically same as 'cover'
   border-radius: 3px
   box-shadow: 0 1.5rem 4rem rgba($color-blackest, .25)
-  height: 50rem
+
+  +respond-tab-land
+    background-image: linear-gradient(105deg, rgba($color-whitest, .9) 0%, rgba($color-whitest, .9) 65%, transparent 65%), url(../img/nat-10.jpg)
+    background-size: cover
+
+  +respond-tab-port
+    background-image: linear-gradient(to right, rgba($color-whitest, .9) 0%, rgba($color-whitest, .9) 100%), url(../img/nat-10.jpg)
 
   &__form
     width: 50%
     padding: 6rem
+
+    +respond-tab-land
+      width: 65%
+    
+    +respond-tab-port
+      width: 100%

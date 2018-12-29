@@ -12,6 +12,13 @@
   // & > * // Can't do this because there is already a transform for the shape
   //   transform: skewX(12deg)
 
+  +respond-tab-port
+    width: 100%
+    padding: 4rem
+    padidng-left: 7rem
+
+  +respond-phone
+    transform: skew(0)
 
   &__shape
     width: 15rem
@@ -27,6 +34,9 @@
     -webkit-clip-path: circle(50% at 50% 50%)
     clip-path: circle(50% at 50% 50%)
     transform: translateX(-3rem) skewX(12deg) // best way to position a floated element
+
+    +respond-phone
+      transform: translateX(-3rem) skew(0)
 
   &__img
     height: 100% // image is wider than it is tall so setting height
@@ -55,3 +65,6 @@
 
   &__text
     transform: skewX(12deg)
+
+    +respond-phone
+      transform: skewX(0)
