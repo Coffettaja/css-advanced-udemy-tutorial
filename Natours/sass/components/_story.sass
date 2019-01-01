@@ -26,13 +26,13 @@
     background: orangered
     float: left
     position: relative
+    overflow: hidden
+    border-radius: 50%
 
     // For this to work, the element has to have defined dimensions (width, height) and it has to be floated. Makes the text wrap around a circle shape
     -webkit-shape-outside: circle(50% at 50% 50%)
     shape-outside: circle(50% at 50% 50%)
 
-    -webkit-clip-path: circle(50% at 50% 50%)
-    clip-path: circle(50% at 50% 50%)
     transform: translateX(-3rem) skewX(12deg) // best way to position a floated element
 
     +respond-phone
