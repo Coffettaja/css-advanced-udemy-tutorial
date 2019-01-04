@@ -172,6 +172,51 @@
   }
 }
 
+// IMAGE GALLERY
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+// HOTEL OVERVIEW
+.overview {
+  display: flex;
+
+  &__heading {
+
+  }
+
+  &__stars {
+    margin-right: auto; // creates a space between this element and the one to the right. Similar layout could be achieved by setting flex-grow: 1, but then the whole element would take the space, not just the margin.
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+  }
+
+  &__rating {
+
+  }
+
+  &__rating-average {
+
+  }
+
+  &__rating-count {
+
+  }
+}
+
 // LEGAL TEXT
 .legal {
   font-size: 1.2rem;
