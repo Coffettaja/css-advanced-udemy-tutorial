@@ -1,20 +1,15 @@
-/*
-COLORS
+// Responsiveness
+@mixin respond-width($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
 
-Primary: #eb2f64
-Primary light: #FF3366
-Primary dark: #BA265D
+$bp-largest: 75em; // 1200 px
+$bp-large: 68.75em; // 1100 px
+$bp-medium: 56.25em; // 900 px
 
-Grey light 1: #faf9f9
-Grey light 2: #f4f2f2
-Grey light 3: #f0eeee
-Grey light 4: #ccc
 
-Grey dark 1: #333
-Grey dark 2: #777
-Grey dark 3: #999
-
-*/
 // CSS variables can be manipulated with JS, or within dev tools. Furthermore they cascade and are inherited.
 
 // Basically the same as "html" but with higher specificity
@@ -55,6 +50,10 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include respond-width($bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {
