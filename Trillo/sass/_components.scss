@@ -398,18 +398,21 @@
       width: 1rem;
       margin-right: .7rem;
 
-      // Older browsers
-      // background-image: url(../img/chevron-thin-right.svg);
-      // background-size: cover;
+      //Older browsers, color cannot be changed
+      background-image: url(../img/chevron-thin-right.svg);
+      background-size: cover;
 
-      // Never browsers
-      background-color: var(--color-primary);
-      // Mask clips out the background color everywhere excpet at the location of the image.
-      // This way the color of the svg can be changed even when used in css.
-      -webkit-mask-image: url(../img/chevron-thin-right.svg);
-      -webkit-mask-size: cover;
-      mask-image: url(../img/chevron-thin-right.svg);
-      mask-size: cover;
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: var(--color-primary);
+        // Mask clips out the background color everywhere except at the location  of the image.
+        // This way the color of the svg can be changed even when used in css.
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        background-image: none;
+      }
+      
     }
   }
 }
