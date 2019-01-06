@@ -54,6 +54,10 @@
   @include respond-width($bp-medium) {
     padding: 2.5rem;
   }
+
+  @include respond-width($bp-small) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -68,6 +72,12 @@
     padding: 1.5rem;
     margin-right: 2.5rem;
   }
+
+  @include respond-width($bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
 }
 
 .user-reviews {
