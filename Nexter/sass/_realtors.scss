@@ -9,12 +9,31 @@
   grid-row-gap: 2rem;
   height: 100%;
 
+  @media only screen and (max-width: $bp-tablet) {
+    grid-column: 1 / -1;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
     grid-row-gap: 1.5rem;
     align-items: center;
+
+    @media only screen and (max-width: $bp-tablet) {
+      grid-template-columns: repeat(3, min-content max-content);
+      grid-column-gap: 4.5rem;
+    }
+
+    @media only screen and (max-width: $bp-phone-l) {
+      grid-template-columns: min-content max-content;
+    }
+  }
+
+  &__details {
+    @media only screen and (max-width: $bp-tablet) {
+      margin-left: -3rem;
+    }
   }
 
   &__img {
